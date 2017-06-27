@@ -54,8 +54,8 @@ class Triqs(CMakePackage):
     # parallel = False
 
     # TRIQS Dependencies
+    depends_on('gcc@7.1.0: languages=c++,fortran', type=('build', 'link'))
     depends_on('cmake@2.8.7:', type='build')
-    depends_on('gcc@7.1.0:', type=('build', 'link'))
     depends_on('mpi', type=('build', 'link'))
     depends_on('lapack', type=('build', 'link'))
     depends_on('fftw@3.2.0:', type=('build', 'link'))
