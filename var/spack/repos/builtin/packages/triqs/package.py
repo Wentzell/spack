@@ -28,7 +28,7 @@ from spack import *
 class Triqs(CMakePackage):
     """TRIQS: a Toolbox for Research on Interacting Quantum Systems"""
 
-    # TRIQS Homepage and v1.4 download link
+    # TRIQS Homepage and github page
     homepage = "https://triqs.ipht.cnrs.fr"
     url      = "https://github.com/TRIQS/triqs/archive/1.4.tar.gz"
 
