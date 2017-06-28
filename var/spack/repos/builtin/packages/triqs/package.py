@@ -39,6 +39,8 @@ class Triqs(CMakePackage):
     # parallel = False
 
     # TRIQS Dependencies
+    depends_on('xz', type=('build'))
+    depends_on('zip', type=('build'))
     depends_on('gcc@4.9.1:', type=('build', 'link'))
     depends_on('gcc@5.1.0:', type=('build', 'link'), when='@unstable')
     depends_on('cmake@2.8.7:', type='build')
