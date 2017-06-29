@@ -50,7 +50,7 @@ class Triqs(CMakePackage):
     depends_on('lapack', type=('build', 'link'))
     depends_on('fftw@3.2.0:', type=('build', 'link'))
     depends_on('boost@1.49.0:', type=('build', 'link'))
-    depends_on('hdf5@1.8.2:', type=('build', 'link'))
+    depends_on('hdf5@1.8.2: %gcc@7.1.0', type=('build', 'link'))
     depends_on('llvm', type=('build', 'link'), when='+with-llvm')
     depends_on('python@2.7.0:', type=('build', 'link', 'run'))
     depends_on('py-scipy')
