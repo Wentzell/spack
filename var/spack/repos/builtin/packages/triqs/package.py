@@ -28,7 +28,6 @@ from spack import *
 class Triqs(CMakePackage):
     """TRIQS: a Toolbox for Research on Interacting Quantum Systems"""
 
-    # TRIQS Homepage and github page
     homepage = "https://triqs.ipht.cnrs.fr"
     url      = "https://github.com/TRIQS/triqs/archive/1.4.tar.gz"
 
@@ -36,9 +35,8 @@ class Triqs(CMakePackage):
     version('master', git='https://github.com/TRIQS/triqs.git', branch='master')
     version('unstable', git='https://github.com/TRIQS/triqs.git', branch='unstable')
 
-    variant('with-llvm',
-          default=False,
-          description='Install with llvm for full c++2py functionality')
+    variant('with-llvm', default=False, description='Install with llvm for full c++2py functionality')
+    variant('debug', default=False, description='Build debug version')
 
     # parallel = False
 
@@ -60,7 +58,13 @@ class Triqs(CMakePackage):
     depends_on('py-mako@0.9.1:')
     depends_on('py-sphinx@1.0.1:')
 
-    # def cmake_args(self):
-        # # Specify arguments other than CMAKE_INSTALL_PREFIX and CMAKE_BUILD_TYPE
-        # args = []
-        # return args
+    def build_type(self):
+        spec = self.spec
+        if '+debug' in spec:
+            return 'Debug'
+        else:
+            return 'Release'
+
+    def cmake_args(self):
+        args = []
+        return args
