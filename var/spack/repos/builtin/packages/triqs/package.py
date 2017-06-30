@@ -55,7 +55,7 @@ class Triqs(CMakePackage):
     depends_on('python@2.7.0:', type=('build', 'link', 'run'))
     depends_on('py-scipy')
     depends_on('py-numpy')
-    depends_on('py-h5py')
+    depends_on('py-h5py -mpi')
     depends_on('py-matplotlib@0.99:')
     depends_on('py-mako@0.9.1:')
     depends_on('py-sphinx@1.0.1:')
