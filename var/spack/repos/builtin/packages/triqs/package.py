@@ -43,7 +43,6 @@ class Triqs(CMakePackage):
     # TRIQS Dependencies
     depends_on('cmake@2.8.7:', type='build')
     depends_on('mpi', type=('build', 'link'))
-    #depends_on('gmp', type=('build', 'link'))
     depends_on('lapack', type=('build', 'link'))
     depends_on('fftw@3.2.0:', type=('build', 'link'))
     depends_on('boost@1.49.0:', type=('build', 'link'))
